@@ -38,5 +38,6 @@ jobs:
           sudo mkdir -p /var/lib/nydus-store
           sudo cp misc/nydus-config.json /etc/nydusd-config.json
           sudo cp misc/storage.conf /etc/containers/storage.conf
+          podman version
           nohup sudo bin/nydus-store --log-to-stdout --log-level info --config-path /etc/nydusd-config.json --root /var/lib/nydus-store &
           sudo podman run -it ghcr.io/dragonflyoss/image-service/nginx:nydus-latest echo hello word
